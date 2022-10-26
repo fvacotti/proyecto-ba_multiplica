@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facundo Vacotti</title>
+    <link rel="stylesheet" href="style-general.css">
+    <link rel="stylesheet" href="style-home.css">
+    <link rel="shortcut icon" href="img/icon.svg" type="image/x-icon">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+        <nav class="nav">
+            <ul class="menu">
+                <li><a href="#landing">home</a></li>
+                <li><a href="#about">sobre mí</a></li>
+                <li><a href="#trabajos">trabajos</a></li>
+                <li><a href="#contacto">contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO -->
+
+    <main>
+
+        <!-- LANDING -->
+
+        <section id="landing">
+            <div class="line_white"></div>
+            <h1>f.<span class="bold">vacotti</span></h1>
+            <h3>// cv + portfolio</h3>
+        </section>
+
+        <!-- SOBRE MÍ -->
+
+        <section id="about">
+            <article class="data">
+                <h2>sobre mí.</h2>
+                <p><span class="bold">¡Hola!</span>. Te doy la bienvenida a mi cv/portfolio.
+                    <br> <br>
+                    Mi nombre es <span class="bold">Facundo Vacotti</span>. Tengo 22 años, resido en Lomas de Zamora
+                    (Buenos Aires, Argentina) y actualmente estoy en proceso de convertirme en <span
+                        class="bold">diseñador gráfico</span>.
+                    <br> <br>
+                    Me encuentro cursando el cuarto año de la licenciatura en Diseño y Comunicación Visual en la
+                    Universidad Nacional de Lanús (UNLa) y a la vez realizo diferentes cursos para continuar
+                    especializándome en diversos rubros como lo es el de programación web.
+                    <br> <br>
+                    Dentro del rubro del diseño me apasionan por sobre todo el mundo del branding, la tipografía y el diseño editorial.
+                </p>
+            </article>
+        </section>
+
+        <div class="line-container">
+            <div class="line_black"></div>
+        </div>
+
+        <!-- FORMACIÓN -->
+
+        <section id="formac">
+            <article>
+                <h2>formación.</h2>
+                    <div class="timeline">
+                        <ul>
+                            <li>
+                                <div class="time-content">
+                                    <h4 class="date">2012-2017</h4>
+                                    <p>Bachiller en <span class="bold">ciencias sociales</span> en el Instituto San Francisco Javier.<p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="time-content">
+                                    <h4 class="date">2018-2019</h4>
+                                    <p>Licenciatura en <span class="bold">Diseño Industrial</span> en la Universidad Nacional de Lanús (UNLa).</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="time-content">
+                                    <h4 class="date">2019-(en curso)</h4>
+                                    <p>Licenciatura en <span class="bold">Diseño y Comunicación Visual</span> en la Universidad Nacional de Lanús (UNLa).</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="time-content">
+                                    <h4 class="date">2022-(en curso)</h4>
+                                    <p>Curso de <span class="bold">inglés</span> (nivel 2) brindado por el Centro Universitario de Idiomas (CUI).</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="time-content">
+                                    <h4 class="date">2022-(en curso)</h4>
+                                    <p>Curso de <span class="bold">programación web inicial</span> / <span class="bold">front-end developer</span> "BA Multiplica 2.0" brindado por Gobierno de la Ciudad y la Universidad Tecnológica Nacional (UTN).</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+            </article>
+        </section>
+
+        <div class="line-container">
+            <div class="line_black"></div>
+        </div>
+
+        <!-- TRABAJOS -->
+
+        <section id="trabajos">
+            <article>
+                <h2>trabajos</h2>
+                <div class="container-work">
+                    <div class="work-card">
+                        <a href="branding.html">branding.</a>
+                    </div>
+                    <div class="work-card">
+                        <a href="editorial.html">editorial.</a>
+                    </div>
+                    <div class="work-card">
+                        <a href="lettering.html">lettering.</a>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <div class="line-container">
+            <div class="line_black"></div>
+        </div>
+
+        <!-- CONTACTO -->
+
+        <section id="contacto">
+            <h2>contáctame.</h2>
+            <div class="form">
+                <form method="post" action="mailto:fvacotti@outlook.com?subject=¡Trabajemos juntos!" target="_blank" enctype="text/plain">
+
+                    <label for="nombre">nombre.</label>
+                    <input type="text" name="Nombre" id="nombre" placeholder="ej.: Juan" required>
+
+                    <label for="apellido">apellido.</label>
+                    <input type="text" name="Apellido" id="apellido" placeholder="ej.: Pérez">
+
+                    <label for="correo">correo.</label>
+                    <input type="email" name="Correo" id="correo" placeholder="juanperez@mail.com" required>
+
+                    <label for="tel">teléfono.</label>
+                    <input type="tel" name="Telefono" id="tel" placeholder="1101010101">
+
+                    <label for="describe">¿qué trabajo querés realizar?</label>
+                    <textarea name="Describe" id="describe" cols="30" rows="10" placeholder="Describí el trabajo que deseas realizar" required></textarea>
+                    <input class="send" type="submit" value="enviar">
+                </form>
+
+            <div class="other">
+                <p><span class="bold">vías alternativas.</span></p>
+                <ul>
+                    <li><a href="tel:541144100093" target="_blank" class="fa-brands fa-whatsapp"></a></li>
+                    <li><a href="https://t.me/fvacotti" target="_blank" class="fa-brands fa-telegram"></a></li>
+                    <li><a href="https://www.behance.net/facundovacotti" target="_blank" class="fa-brands fa-behance"></a></li>
+                    <li><a href="https://www.linkedin.com/in/facundo-vacotti-876a5919b" target="_blank" class="fa-brands fa-linkedin-in"></a></li>
+                    <li><a href="mailto:fvacotti@outlook.com" target="_blank" class="fa-sharp fa-solid fa-envelope"></a></li>
+                </ul>
+                <div class="line-container">
+                    <div class="line_black"></div>
+                </div>
+                </div>        
+            </div>
+        </div>
+        </section>
+
+        <div class="line-container">
+            <div class="line_black"></div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer id="footer">
+        <ul class="footer_data">
+            <li class="li_title">facundo vacotti</li>
+            <li>diseñador gráfico</li>
+            <li>front-end developer</li>
+        </ul>
+
+        <ul class="footer_social">
+            <li class="li_title">redes sociales</li>
+            <li><a href="https://www.behance.net/facundovacotti" target="_blank">behance</a></li>
+            <li><a href="https://www.facebook.com/fvacotti" target="_blank">facebook</a></li>
+            <li><a href="https://www.instagram.com/fvacotti" target="_blank">instagram</a></li>
+            <li><a href="https://twitter.com/FVacotti" target="_blank">twitter</a></li>
+            <li><a href="https://www.youtube.com/c/FacundoVacotti" target="_blank">youtube</a></li>
+        </ul>
+
+        <ul class="footer_social_img">
+            <li><a href="https://www.behance.net/facundovacotti" target="_blank" class="fa-brands fa-behance"></a></li>
+            <li><a href="https://www.facebook.com/fvacotti" target="_blank" class="fa-brands fa-facebook"></a></li>
+            <li><a href="https://www.instagram.com/fvacotti" target="_blank" class="fa-brands fa-instagram"></a></li>
+            <li><a href="https://twitter.com/FVacotti" target="_blank" class="fa-brands fa-twitter"></a></li>
+            <li><a href="https://www.youtube.com/c/FacundoVacotti" class="fa-brands fa-youtube"></a></li>
+        </ul>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script src="https://kit.fontawesome.com/5727d2ffb3.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
