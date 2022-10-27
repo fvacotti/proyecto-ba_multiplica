@@ -206,7 +206,6 @@ header {
 nav {
     width: 50%;
     padding-left: 10%;
-    display: flex;
     animation: slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 }
 
