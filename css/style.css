@@ -108,7 +108,7 @@ header {
 	padding: var(--miPaddingL);
 	position: fixed;
 	top: 0;
-	z-index: 1;
+	z-index: 5;
 }
 
 .menu-items {
@@ -185,7 +185,7 @@ footer {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	gap: 50px;
+	gap: var(--miMarginDiv);
 }
 
 #landing .line {
@@ -480,4 +480,152 @@ footer {
 .fa-instagram:hover {
 	color: #c13584;
 	transition: all 500ms;
+}
+
+/* --------------- PRESENTACIÓN DE DISEÑOS --------------- */
+
+#present-design {
+	width: 100%;
+	background-color: var(--primario);
+	height: calc(100vh - 70px);
+	padding: var(--miPaddingL);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: var(--miMarginDiv);
+}
+
+#present-design .line {
+	background-color: var(--secundario);
+}
+
+#present-design h2,
+#present-design p,
+#present-design a {
+	color: var(--secundario);
+}
+
+#present-design p {
+	width: 70%;
+}
+
+#present-design a {
+	font-size: 1.5em;
+}
+
+/* --------------- GALERÍA --------------- */
+
+#gallery {
+	padding: var(--miPaddingSection);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: var(--secundario);
+	gap: var(--miMarginDiv);
+}
+
+#gallery h3 {
+	font-size: 1.5em;
+}
+
+#gallery .line {
+	margin: 10vh 0;
+}
+
+.gallery-section {
+	display: flex;
+	flex-direction: column;
+	gap: var(--miMarginDiv);
+}
+
+.gallery-container {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.gallery-item {
+	width: 32%;
+	height: 250px;
+	filter: grayscale(1);
+	cursor: pointer;
+}
+
+.gallery-item:hover {
+	transition: all 500ms;
+	filter: grayscale(0);
+}
+
+.gallery-item img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* --------------- IMAGEN ABIERTA --------------- */
+
+/* --------------- FONDO --------------- */
+
+.lightbox {
+	position: fixed;
+	display: none;
+	background: rgba(0, 0, 0, 0.95);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+
+/* --------------- CAJA IMAGEN ABIERTA --------------- */
+
+.lightbox-content {
+	width: 70%;
+	height: 100%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+}
+
+.lightbox-content img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+/* --------------- FLECHAS --------------- */
+
+.lightbox-prev,
+.lightbox-next {
+	position: absolute;
+	font-size: 2em;
+	color: var(--secundario);
+	padding: 10px;
+	top: 45%;
+	cursor: pointer;
+}
+
+.lightbox-prev {
+	left: -50px;
+}
+
+.lightbox-next {
+	right: -50px;
+}
+
+@keyframes puff-in-center {
+	0% {
+		transform: scale(2);
+		filter: blur(4px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: scale(1);
+		filter: blur(0px);
+		opacity: 1;
+	}
 }
