@@ -1,3 +1,25 @@
+const navToggle = document.querySelector(".nav-toggle");
+const navMenu = document.querySelector(".nav-menu");
+
+navToggle.addEventListener("click", () => {navMenu.classList.toggle ("nav-menu_visible")});
+
+// --------------- BOTÓN ARRIBA ---------------
+
+function subir() {
+	window.addEventListener("scroll", () =>{
+		let scroll = document.documentElement.scrollTop;
+		let btnUp = document.getElementById("btn-up");
+
+		if(scroll >= 300){
+			btnUp.style.right = 30 + "px";
+		} else {
+			btnUp.style.right = -200 + "px";
+		}
+	})
+}
+
+subir();
+
 // --------------- GALERÍA ---------------
 
 const galleryItem = document.getElementsByClassName("gallery-item");
@@ -55,7 +77,7 @@ function currentImg() {
 	lightBoxContainer.style.display = "flex";
 	lightBoxContainer.style.alignItems = "center";
 	lightBoxContainer.style.justifyContent = "center";
-	lightBoxContainer.style.animation = "500ms puff-in-center";
+	lightBoxContainer.style.animation = "puff-in-center 700ms cubic-bezier(0.470, 0.000, 0.745, 0.715) both";
 
 	let imageIndex = parseInt(this.getAttribute("data-index"));
 

@@ -18,56 +18,18 @@
 	--miMarginDiv: 10vh;
 }
 
-/* --------------- GENERAL --------------- */
+/* --------------- ANIMACIONES --------------- */
 
-html {
-	scroll-behavior: smooth;
-}
+@keyframes text-blur-out {
+	0% {
+		-webkit-filter: blur(0.01);
+		filter: blur(0.01);
+	}
 
-body {
-	/* Esto es para que el header no tape el main */
-	padding-top: 70px;
-}
-
-.bold {
-	font-weight: 700;
-}
-
-h1 {
-	font-size: 6em;
-	color: var(--secundario);
-}
-
-h2 {
-	font-size: 3em;
-	font-weight: 700;
-	color: var(--primario);
-}
-
-h3 {
-	font-size: 1em;
-	font-weight: 400;
-	color: var(--primario);
-}
-
-p {
-	font-size: 1em;
-	line-height: 1.7;
-	font-weight: 400;
-}
-
-/* --------------- LÍNEAS DIVISORIAS --------------- */
-
-.line-container {
-	padding: var(--miPaddingL);
-	background-color: var(--secundario);
-}
-
-.line {
-	width: 100%;
-	height: 2px;
-	background-color: var(--primario);
-	animation: line 3s infinite;
+	100% {
+		-webkit-filter: blur(12px) opacity(0%);
+		filter: blur(12px) opacity(0%);
+	}
 }
 
 @keyframes line {
@@ -97,6 +59,110 @@ p {
 	}
 }
 
+@keyframes blink-1 {
+
+	0%,
+	50%,
+	100% {
+		opacity: 1;
+	}
+
+	25%,
+	75% {
+		opacity: 0;
+	}
+}
+
+@keyframes puff-in-center {
+	0% {
+		transform: scale(2);
+		filter: blur(4px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: scale(1);
+		filter: blur(0px);
+		opacity: 1;
+	}
+}
+
+/* --------------- GENERAL --------------- */
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	/* Esto es para que el header no tape el main */
+	padding-top: 70px;
+	background-color: var(--primario);
+}
+
+.bold {
+	font-weight: 700;
+}
+
+h1 {
+	font-size: 6em;
+	color: var(--secundario);
+}
+
+h2 {
+	font-size: 3em;
+	font-weight: 700;
+	color: var(--primario);
+}
+
+h3 {
+	font-size: 1em;
+	font-weight: 400;
+	color: var(--primario);
+}
+
+p {
+	font-size: 1em;
+	line-height: 1.7;
+	font-weight: 400;
+}
+
+.btn-up {
+	width: 40px;
+	height: 40px;
+	background-color: var(--primario);
+	position: fixed;
+	border: none;
+	border-radius: 50%;
+	/* escondo el botón para después aparecerlo con js */
+	right: -200px;
+	bottom: 30px;
+	transition: all 500ms;
+	cursor: pointer;
+}
+
+.btn-up a {
+	color: var(--secundario);
+	font-size: 20px;
+}
+
+.btn-up:hover {
+	transform: scale(1.1);
+}
+
+/* --------------- LÍNEAS DIVISORIAS --------------- */
+
+.line-container {
+	padding: var(--miPaddingL);
+	background-color: var(--secundario);
+}
+
+.line {
+	width: 100%;
+	height: 2px;
+	background-color: var(--primario);
+	animation: line 3s infinite;
+}
+
 /* --------------- HEADER --------------- */
 
 header {
@@ -109,20 +175,47 @@ header {
 	position: fixed;
 	top: 0;
 	z-index: 5;
+	animation: text-blur-out 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) reverse both;
 }
 
-.menu-items {
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
 	display: flex;
 	gap: 70px;
 }
 
-.menu-items a {
+.nav-toggle {
+    color: #ffffff;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    line-height: 70px;
+    cursor: pointer;
+    display: none;
+}
+
+.nav-toggle > div {
+    width: 30px;
+    height: 2px;
+    margin-bottom: 7px;
+    background-color: var(--secundario);
+}
+
+.nav-toggle > div:last-child {
+    margin-bottom: 0;
+}
+
+.nav-menu a {
 	font-size: 0.8em;
 	color: var(--secundario);
 	position: relative;
 }
 
-.menu-items a::after {
+.nav-menu a::after {
 	content: "";
 	position: absolute;
 	right: 0;
@@ -136,10 +229,11 @@ header {
 	transition: transform 500ms ease-in-out;
 }
 
-.menu-items a:hover::after {
+.nav-menu a:hover::after {
 	transform-origin: left;
 	transform: scaleX(1);
 }
+
 
 /* --------------- FOOTER --------------- */
 
@@ -166,6 +260,7 @@ footer {
 
 .footer-redes {
 	display: flex;
+	flex-wrap: wrap;
 	gap: 30px;
 	align-items: flex-end;
 }
@@ -186,6 +281,7 @@ footer {
 	flex-direction: column;
 	justify-content: center;
 	gap: var(--miMarginDiv);
+	animation: text-blur-out 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) reverse both;
 }
 
 #landing .line {
@@ -318,11 +414,13 @@ footer {
 	width: 100%;
 	margin-top: var(--miMarginDiv);
 	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
 	gap: 50px;
 }
 
 .work-container a {
-	width: 33.3%;
+	width: 30%;
 	display: flex;
 	align-items: flex-end;
 	height: 350px;
@@ -337,20 +435,6 @@ footer {
 	color: var(--primario);
 	transition: 500ms;
 	animation: blink-1 600ms both;
-}
-
-@keyframes blink-1 {
-
-	0%,
-	50%,
-	100% {
-		opacity: 1;
-	}
-
-	25%,
-	75% {
-		opacity: 0;
-	}
 }
 
 /* --------------- CONTACTO --------------- */
@@ -424,8 +508,8 @@ footer {
 }
 
 .contacto-other ul {
-	height: 5vh;
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	gap: 30px;
 }
@@ -493,6 +577,7 @@ footer {
 	flex-direction: column;
 	justify-content: center;
 	gap: var(--miMarginDiv);
+	animation: text-blur-out 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) reverse both;
 }
 
 #present-design .line {
@@ -509,17 +594,12 @@ footer {
 	width: 70%;
 }
 
-#present-design a {
-	font-size: 1.5em;
-}
-
 /* --------------- GALERÍA --------------- */
 
 #gallery {
 	padding: var(--miPaddingSection);
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	background-color: var(--secundario);
 	gap: var(--miMarginDiv);
 }
@@ -542,11 +622,12 @@ footer {
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
 	gap: 20px;
 }
 
 .gallery-item {
-	width: 32%;
+	width: 30%;
 	height: 250px;
 	filter: grayscale(1);
 	cursor: pointer;
@@ -575,6 +656,7 @@ footer {
 	height: 100%;
 	top: 0;
 	left: 0;
+	/* z-index para que quede encima del header */
 	z-index: 10;
 }
 
@@ -616,16 +698,67 @@ footer {
 	right: -50px;
 }
 
-@keyframes puff-in-center {
-	0% {
-		transform: scale(2);
-		filter: blur(4px);
-		opacity: 0;
+/* --------------- RESPONSIVE --------------- */
+
+@media (max-width: 1200px) {
+
+	.timeline {
+		width: 90%;
 	}
 
-	100% {
-		transform: scale(1);
-		filter: blur(0px);
-		opacity: 1;
+	.work-container a {
+		width: 45%;
+	}
+}
+
+@media (max-width: 992px) {
+	
+	.nav-menu {
+        flex-direction: column;
+        /* margin-right: 0; */
+        width: 100%;
+        position: fixed;
+        top: 70px;
+        right: 0;
+        padding: 20px 0;
+        background-color: var(--primario);
+        height: 100vh;
+        right: 100%;
+        transition: right .5s;
+        font-size: 1em;
+    }
+
+    .nav-menu-item {
+        margin: 0 20vh;
+    }
+
+    .nav-menu a:hover {
+        background-color: none;
+        font-weight: 800;
+        transition: .5s;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu_visible {
+        right: 0;
+    }
+
+	/* FORMULARIO */
+	.form-container {
+		width: 100%;
+		flex-direction: column;
+		gap: 15vh;
+	}
+
+	.form {
+		width: 100%;
+	}
+
+	.contacto-other {
+		width: 100%;
+		flex-direction: column;
 	}
 }
