@@ -175,38 +175,16 @@ header {
 	position: fixed;
 	top: 0;
 	z-index: 5;
-	animation: text-blur-out 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) reverse both;
 }
 
 nav {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .nav-menu {
 	display: flex;
 	gap: 70px;
-}
-
-.nav-toggle {
-    color: #ffffff;
-    background: none;
-    border: none;
-    font-size: 1.5em;
-    line-height: 70px;
-    cursor: pointer;
-    display: none;
-}
-
-.nav-toggle > div {
-    width: 30px;
-    height: 2px;
-    margin-bottom: 7px;
-    background-color: var(--secundario);
-}
-
-.nav-toggle > div:last-child {
-    margin-bottom: 0;
 }
 
 .nav-menu a {
@@ -229,11 +207,42 @@ nav {
 	transition: transform 500ms ease-in-out;
 }
 
+.nav-menu a.selected::after,
 .nav-menu a:hover::after {
 	transform-origin: left;
 	transform: scaleX(1);
 }
 
+.open-menu>div {
+	background-color: var(--secundario);
+	width: 30px;
+	height: 2px;
+	margin-bottom: 8px;
+}
+
+.open-menu>div:last-child {
+	margin-bottom: 0px;
+}
+
+.close-menu>div {
+	background-color: var(--secundario);
+	width: 30px;
+	height: 2px;
+}
+
+.close-1 {
+	transform: rotate(45deg);
+}
+
+.close-2 {
+	transform: rotate(-45deg);
+	translate: 0px -2px;
+}
+
+.open-menu,
+.close-menu {
+	display: none;
+}
 
 /* --------------- FOOTER --------------- */
 
@@ -712,41 +721,59 @@ footer {
 }
 
 @media (max-width: 992px) {
-	
+
+	/* --------------- HEADER --------------- */
+
 	.nav-menu {
-        flex-direction: column;
-        /* margin-right: 0; */
-        width: 100%;
-        position: fixed;
-        top: 70px;
-        right: 0;
-        padding: 20px 0;
-        background-color: var(--primario);
-        height: 100vh;
-        right: 100%;
-        transition: right .5s;
-        font-size: 1em;
-    }
+		width: 100%;
+		height: 100%;
+		flex-direction: column;
+		position: fixed;
+		left: 0;
+		top: 0;
+		padding-left: var(--miPaddingSection);
+		background-color: var(--primario);
+		/* overflow-y: auto; */
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.3s;
+	}
 
-    .nav-menu-item {
-        margin: 0 20vh;
-    }
+	.nav-menu li {
+		font-size: 2em;
+	}
 
-    .nav-menu a:hover {
-        background-color: none;
-        font-weight: 800;
-        transition: .5s;
-    }
+	.open-menu,
+	.close-menu {
+		display: block;
+		border: none;
+		background: none;
+		cursor: pointer;
+	}
 
-    .nav-toggle {
-        display: block;
-    }
+	.close-menu {
+		align-self: flex-start;
+		padding: 35px 0 0 0;
+	}
 
-    .nav-menu_visible {
-        right: 0;
-    }
+	.menu_opened {
+		opacity: 1;
+		pointer-events: all;
+	}
 
-	/* FORMULARIO */
+	.open-menu:focus:not(:focus-visible),
+	.close-menu:focus:not(:focus-visible) {
+		outline: none;
+	}
+
+	/* --------------- LANDING --------------- */
+
+	h1 {
+		font-size: 4em;
+	}
+
+	/* --------------- FORMULARIO --------------- */
+
 	.form-container {
 		width: 100%;
 		flex-direction: column;
