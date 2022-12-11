@@ -785,10 +785,15 @@ footer {
 
 @media (max-width: 768px) {
 
+	:root {
+		--miPaddingL: 0 5vh;
+		--miPaddingSection: 5vh;
+	}
+
 	/* --------------- LANDING --------------- */
 
 	h1 {
-		font-size: 4em;
+		font-size: 2em;
 	}
 
 	/* --------------- SOBRE MÍ --------------- */
