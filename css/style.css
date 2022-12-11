@@ -786,8 +786,8 @@ footer {
 @media (max-width: 768px) {
 
 	:root {
-		--miPaddingL: 0 10vh;
-		--miPaddingSection: 10vh;
+		--miPaddingL: 0 5vh;
+		--miPaddingSection: 5vh;
 	}
 
 	/* --------------- LANDING --------------- */
