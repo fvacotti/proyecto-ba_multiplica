@@ -796,12 +796,16 @@ footer {
 		font-size: 2em;
 	}
 
+	#landing p {
+		font-size: 0.7em;
+	}
+	
+	/* --------------- SOBRE MÍ --------------- */
+
 	h2 {
 		font-size: 1.5em;
 	}
-
-	/* --------------- SOBRE MÍ --------------- */
-
+	
 	#about .about-data {
 		width: 100%;
 		text-align: justify;
