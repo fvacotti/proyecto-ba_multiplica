@@ -786,8 +786,8 @@ footer {
 @media (max-width: 768px) {
 
 	:root {
-		--miPaddingL: 0 10vh;
-		--miPaddingSection: 10vh;
+		--miPaddingL: 0 20vh;
+		--miPaddingSection: 20vh;
 	}
 
 	/* --------------- LANDING --------------- */
@@ -805,7 +805,7 @@ footer {
 	#about .about-data {
 		width: 100%;
 		text-align: justify;
-		font-size: 0.8em;
+		font-size: 0.7em;
 	}
 
 	/* --------------- TRABAJOS --------------- */
@@ -837,7 +837,7 @@ footer {
 	#present-design p{
 		width: 100%;
 		text-align: justify;
-		font-size: 0.8em;
+		font-size: 0.7em;
 	}
 
 	/* --------------- GALERÍA --------------- */
