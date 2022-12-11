@@ -109,7 +109,7 @@ h1 {
 }
 
 h2 {
-	font-size: 3em;
+	font-size: 2em;
 	font-weight: 700;
 	color: var(--primario);
 }
@@ -329,7 +329,7 @@ footer {
 	color: var(--primario);
 }
 
-/* --------------- LÍNEA --------------- */
+/* LÍNEA */
 
 .timeline {
 	width: 80%;
@@ -339,7 +339,7 @@ footer {
 	position: relative;
 }
 
-/* --------------- LÍNEA DEL MEDIO --------------- */
+/* LÍNEA DEL MEDIO */
 
 .timeline::before {
 	content: "";
@@ -350,7 +350,7 @@ footer {
 	background-color: var(--primario);
 }
 
-/* --------------- CONTENIDO LÍNEA --------------- */
+/* CONTENIDO LÍNEA */
 
 .timeline ul li {
 	width: 50%;
@@ -359,7 +359,7 @@ footer {
 	margin-bottom: 50px;
 }
 
-/* --------------- PARTE IZQUIERDA --------------- */
+/* PARTE IZQUIERDA */
 
 .timeline ul li:nth-child(odd) {
 	float: left;
@@ -373,7 +373,7 @@ footer {
 	transform: translate(50%, -50%);
 }
 
-/* --------------- PARTE DERECHA --------------- */
+/* PARTE DERECHA */
 
 .timeline ul li:nth-child(even) {
 	float: right;
@@ -387,13 +387,13 @@ footer {
 	transform: translate(-50%, -50%);
 }
 
-/* --------------- QUITAR MARGIN-BOTTOM AL ÚLTIMO ÍTEM --------------- */
+/* QUITAR MARGIN-BOTTOM AL ÚLTIMO ÍTEM */
 
 .timeline ul li:last-child {
 	margin-bottom: 0;
 }
 
-/* --------------- SETEO CONTENIDO DE LA LÍNEA --------------- */
+/* SETEO CONTENIDO DE LA LÍNEA */
 
 .time-content .date {
 	font-size: 0.6em;
@@ -614,7 +614,7 @@ footer {
 }
 
 #gallery h3 {
-	font-size: 1.5em;
+	font-size: 1em;
 }
 
 #gallery .line {
@@ -711,16 +711,10 @@ footer {
 
 @media (max-width: 1200px) {
 
-	.timeline {
-		width: 90%;
+	:root {
+		--miPaddingL: 0 15vh;
+		--miPaddingSection: 15vh;
 	}
-
-	.work-container a {
-		width: 45%;
-	}
-}
-
-@media (max-width: 992px) {
 
 	/* --------------- HEADER --------------- */
 
@@ -736,11 +730,11 @@ footer {
 		/* overflow-y: auto; */
 		opacity: 0;
 		pointer-events: none;
-		transition: opacity 0.3s;
+		/* transition: opacity 500ms; */
 	}
 
 	.nav-menu li {
-		font-size: 2em;
+		font-size: 1.5em;
 	}
 
 	.open-menu,
@@ -766,10 +760,49 @@ footer {
 		outline: none;
 	}
 
+	/* --------------- FOOTER --------------- */
+
+	footer {
+		flex-direction: column;
+		gap: 70px;
+		padding: 15vh 15vh 10vh;
+	}
+
+	.timeline {
+		width: 90%;
+	}
+
+	.work-container a {
+		width: 45%;
+		font-size: 1.5em;
+	}
+
+	.gallery-item {
+		width: 45%;
+		
+	}
+}
+
+@media (max-width: 768px) {
+
 	/* --------------- LANDING --------------- */
 
 	h1 {
 		font-size: 4em;
+	}
+
+	/* --------------- SOBRE MÍ --------------- */
+
+	#about .about-data {
+		width: 100%;
+		text-align: justify;
+	}
+
+	/* --------------- TRABAJOS --------------- */
+
+	.work-container a {
+		width: 100%;
+		font-size: 2em;
 	}
 
 	/* --------------- FORMULARIO --------------- */
@@ -777,7 +810,7 @@ footer {
 	.form-container {
 		width: 100%;
 		flex-direction: column;
-		gap: 15vh;
+		gap: 10vh;
 	}
 
 	.form {
@@ -788,4 +821,29 @@ footer {
 		width: 100%;
 		flex-direction: column;
 	}
+
+	/* --------------- WORKS --------------- */
+
+	#present-design p{
+		width: 100%;
+		text-align: justify;
+	}
+
+	/* --------------- GALERÍA --------------- */
+
+	.gallery-item {
+		width: 100%;
+	}
+
+	.lightbox-content {
+		width: 85%;
+	}
+
+	.lightbox-prev {
+		left: -30px;
+	}
+	
+	.lightbox-next {
+		right: -30px;
+	}	
 }
