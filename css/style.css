@@ -793,7 +793,7 @@ footer {
 	/* --------------- LANDING --------------- */
 
 	h1 {
-		font-size: 2em;
+		font-size: 3em;
 	}
 
 	#landing p {
@@ -808,7 +808,6 @@ footer {
 	
 	#about .about-data {
 		width: 100%;
-		text-align: justify;
 		font-size: 0.7em;
 	}
 
