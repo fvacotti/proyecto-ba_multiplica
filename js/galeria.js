@@ -1,39 +1,44 @@
-// --------------- GALERÍA ---------------
+// --------------- GALERÍA --------------- //
 
 const galleryItem = document.getElementsByClassName("gallery-item");
 
-// elemento para el lightbox
+// creo elemento para el lightbox
 
 const lightBoxContainer = document.createElement("div");
 
-// area del lightbox
+// creo área del lightbox
 
 const lightBoxContent = document.createElement("div");
 
-// imagen del lightbox
+// creo imagen del lightbox
 
 const lightBoxImg = document.createElement("img");
 
-// botones prev y next
+// creo botones prev, next y exit
 
 const lightBoxPrev = document.createElement("div");
 const lightBoxNext = document.createElement("div");
+const lightBoxExit = document.createElement("div");
 
-// genero las clases
+// agrego las clases a los elementos creados
 
 lightBoxContainer.classList.add("lightbox");
 lightBoxContent.classList.add("lightbox-content");
 lightBoxPrev.classList.add("fa-solid", "fa-angle-left", "lightbox-prev");
 lightBoxNext.classList.add("fa-solid", "fa-angle-right", "lightbox-next");
+lightBoxExit.classList.add("fa-solid", "fa-xmark", "lightbox-exit");
+
+// agrego en el html
 
 lightBoxContainer.appendChild(lightBoxContent);
 lightBoxContent.appendChild(lightBoxImg);
 lightBoxContent.appendChild(lightBoxPrev);
 lightBoxContent.appendChild(lightBoxNext);
+lightBoxContent.appendChild(lightBoxExit);
 
-document.body.appendChild(lightBoxContainer)
+document.body.appendChild(lightBoxContainer);
 
-// haciendo galería
+// galería
 
 let index = 1;
 
@@ -87,9 +92,7 @@ lightBoxNext.addEventListener("click", nextImg);
 // cerrar galería
 
 function closeLightBox() {
-	if (this === event.target) {
-		lightBoxContainer.style.display = "none"
-	}
+	lightBoxContainer.style.display = "none"
 }
 
-lightBoxContainer.addEventListener("click", closeLightBox);
+lightBoxExit.addEventListener("click", closeLightBox);

@@ -10,27 +10,17 @@
 	text-decoration: none;
 }
 
+/* VARIABLES */
+
 :root {
 	--secundario: #f6f6f6;
 	--primario: #191919;
-	--miPaddingL: 0 20vh;
-	--miPaddingSection: 20vh;
-	--miMarginDiv: 10vh;
+	--miPaddingL: 0 120px;
+	--miPaddingSection: 120px;
+	--miMarginDiv: 60px;
 }
 
-/* --------------- ANIMACIONES --------------- */
-
-@keyframes text-blur-out {
-	0% {
-		-webkit-filter: blur(0.01);
-		filter: blur(0.01);
-	}
-
-	100% {
-		-webkit-filter: blur(12px) opacity(0%);
-		filter: blur(12px) opacity(0%);
-	}
-}
+/* ANIMACIONES */
 
 @keyframes line {
 	0% {
@@ -87,14 +77,14 @@
 	}
 }
 
-/* --------------- GENERAL --------------- */
+/* GENERAL */
 
 html {
 	scroll-behavior: smooth;
 }
 
 body {
-	/* Esto es para que el header no tape el main */
+	/* para que el header no tape el main */
 	padding-top: 70px;
 	background-color: var(--primario);
 }
@@ -126,6 +116,8 @@ p {
 	font-weight: 400;
 }
 
+/* BOTÓN SUBIR */
+
 .btn-up {
 	width: 40px;
 	height: 40px;
@@ -133,7 +125,7 @@ p {
 	position: fixed;
 	border: none;
 	border-radius: 50%;
-	/* escondo el botón para después aparecerlo con js */
+	/* lo escondo para después hacerlo aparecer con js */
 	right: -200px;
 	bottom: 30px;
 	transition: all 500ms;
@@ -149,7 +141,7 @@ p {
 	transform: scale(1.1);
 }
 
-/* --------------- LÍNEAS DIVISORIAS --------------- */
+/* LÍNEAS DIVISORIAS */
 
 .line-container {
 	padding: var(--miPaddingL);
@@ -163,7 +155,7 @@ p {
 	animation: line 3s infinite;
 }
 
-/* --------------- HEADER --------------- */
+/* HEADER */
 
 header {
 	width: 100%;
@@ -213,30 +205,14 @@ nav {
 	transform: scaleX(1);
 }
 
-.open-menu>div {
-	background-color: var(--secundario);
+/* HAMBURGUESA */
+
+.open-menu img {
 	width: 30px;
-	height: 2px;
-	margin-bottom: 8px;
 }
 
-.open-menu>div:last-child {
-	margin-bottom: 0px;
-}
-
-.close-menu>div {
-	background-color: var(--secundario);
+.close-menu img {
 	width: 30px;
-	height: 2px;
-}
-
-.close-1 {
-	transform: rotate(45deg);
-}
-
-.close-2 {
-	transform: rotate(-45deg);
-	translate: 0px -2px;
 }
 
 .open-menu,
@@ -244,19 +220,18 @@ nav {
 	display: none;
 }
 
-/* --------------- FOOTER --------------- */
+/* FOOTER */
 
 footer {
 	width: 100%;
 	display: flex;
 	gap: 150px;
-	padding: 20vh 20vh 10vh;
+	padding: 120px 120px 60px;
 	background-color: var(--secundario);
 	font-size: 0.8em;
-	color: var(--primario);
 }
 
-.li_title {
+.footer_title {
 	margin-bottom: 20px;
 	font-weight: 700;
 }
@@ -274,42 +249,38 @@ footer {
 	align-items: flex-end;
 }
 
-.footer-redes li a {
+.footer-redes a {
 	font-size: 25px;
 	color: var(--primario);
 }
 
-/* --------------- LANDING --------------- */
+/* HOME */
 
-#landing {
+#home {
 	width: 100%;
-	background-color: var(--primario);
 	height: calc(100vh - 70px);
 	padding: var(--miPaddingL);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	gap: var(--miMarginDiv);
-	animation: text-blur-out 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) reverse both;
 }
 
-#landing .line {
+#home .line {
 	background-color: var(--secundario);
-	padding: 0;
 }
 
-#landing p {
+#home p {
 	color: var(--secundario);
-	font-size: 1em;
 	letter-spacing: 5px;
 }
 
-/* --------------- SOBRE MÍ --------------- */
+/* SOBRE MÍ */
 
 #about {
 	width: 100%;
-	background-color: var(--secundario);
 	padding: var(--miPaddingSection);
+	background-color: var(--secundario);
 	color: var(--primario);
 }
 
@@ -321,7 +292,7 @@ footer {
 	margin-bottom: var(--miMarginDiv);
 }
 
-/* --------------- FORMACIÓN --------------- */
+/* FORMACIÓN */
 
 #formacion {
 	background-color: var(--secundario);
@@ -329,7 +300,11 @@ footer {
 	color: var(--primario);
 }
 
-/* LÍNEA */
+/* FORMACIÓN > LÍNEA */
+
+.timeline_2 {
+	display: none;
+}
 
 .timeline {
 	width: 80%;
@@ -339,7 +314,7 @@ footer {
 	position: relative;
 }
 
-/* LÍNEA DEL MEDIO */
+/* FORMACIÓN > LÍNEA MEDIO */
 
 .timeline::before {
 	content: "";
@@ -350,7 +325,7 @@ footer {
 	background-color: var(--primario);
 }
 
-/* CONTENIDO LÍNEA */
+/* FORMACIÓN > LÍNEA> CONTENIDO */
 
 .timeline ul li {
 	width: 50%;
@@ -359,7 +334,7 @@ footer {
 	margin-bottom: 50px;
 }
 
-/* PARTE IZQUIERDA */
+/* FORMACIÓN > LÍNEA > PARTE IZQUIERDA */
 
 .timeline ul li:nth-child(odd) {
 	float: left;
@@ -373,7 +348,7 @@ footer {
 	transform: translate(50%, -50%);
 }
 
-/* PARTE DERECHA */
+/* FORMACIÓN > LÍNEA > PARTE DERECHA */
 
 .timeline ul li:nth-child(even) {
 	float: right;
@@ -387,13 +362,13 @@ footer {
 	transform: translate(-50%, -50%);
 }
 
-/* QUITAR MARGIN-BOTTOM AL ÚLTIMO ÍTEM */
+/* le quito el margin-bottom al último li */
 
 .timeline ul li:last-child {
 	margin-bottom: 0;
 }
 
-/* SETEO CONTENIDO DE LA LÍNEA */
+/* FORMACIÓN > LÍNEA > DATOS */
 
 .time-content .date {
 	font-size: 0.6em;
@@ -411,7 +386,7 @@ footer {
 	color: var(--secundario);
 }
 
-/* --------------- TRABAJOS --------------- */
+/* TRABAJOS */
 
 #work {
 	background-color: var(--secundario);
@@ -442,11 +417,11 @@ footer {
 .work-container a:hover {
 	background-color: var(--secundario);
 	color: var(--primario);
-	transition: 500ms;
+	transition: all 500ms;
 	animation: blink-1 600ms both;
 }
 
-/* --------------- CONTACTO --------------- */
+/* CONTACTO */
 
 #contacto {
 	background-color: var(--secundario);
@@ -459,7 +434,7 @@ footer {
 	margin-top: var(--miMarginDiv);
 	width: 100%;
 	display: flex;
-	gap: 20vh;
+	gap: 120px;
 }
 
 .form {
@@ -479,7 +454,6 @@ footer {
 }
 
 #contacto form input {
-	height: 5vh;
 	padding: 20px;
 	background-color: var(--secundario);
 	border: 1px solid var(--primario);
@@ -489,13 +463,13 @@ footer {
 	resize: none;
 	padding: 20px;
 	background-color: var(--secundario);
-	border: 1px solid var(--primario);
+	border: 1px solid var(--primario)
 }
 
 #contacto form .send {
 	width: 100%;
 	height: 60px;
-	padding: 0 10vh;
+	padding: 0 60px;
 	background-color: var(--primario);
 	color: var(--secundario);
 	font-weight: 700;
@@ -504,10 +478,8 @@ footer {
 }
 
 #contacto form .send:hover {
-	animation: blink-1 0.6s both;
+	animation: blink-1 600ms both;
 }
-
-/* --------------- VÍAS ALTERNATIVAS --------------- */
 
 .contacto-other {
 	width: 40%;
@@ -528,30 +500,25 @@ footer {
 	font-size: 25px;
 }
 
-.fa-whatsapp:hover {
-	color: #128c7e;
-	transition: all 500ms;
-}
-
-/* --------------- HOVER REDES SOCIALES --------------- */
-
-.fa-telegram:hover {
-	color: #2aabee;
-	transition: all 500ms;
-}
+/* HOVER REDES SOCIALES */
 
 .fa-behance:hover {
 	color: #1769ff;
 	transition: all 500ms;
 }
 
-.fa-linkedin-in:hover {
-	color: #0077b5;
+.fa-envelope:hover {
+	color: #034fa0;
 	transition: all 500ms;
 }
 
-.fa-envelope:hover {
-	color: #034fa0;
+.fa-instagram:hover {
+	color: #c13584;
+	transition: all 500ms;
+}
+
+.fa-linkedin-in:hover {
+	color: #0077b5;
 	transition: all 500ms;
 }
 
@@ -565,17 +532,24 @@ footer {
 	transition: all 500ms;
 }
 
+.fa-telegram:hover {
+	color: #2aabee;
+	transition: all 500ms;
+}
+
+.fa-whatsapp:hover {
+	color: #128c7e;
+	transition: all 500ms;
+}
+
 .fa-youtube:hover {
 	color: #ff0000;
 	transition: all 500ms;
 }
 
-.fa-instagram:hover {
-	color: #c13584;
-	transition: all 500ms;
-}
+/* PAGES */
 
-/* --------------- PRESENTACIÓN DE DISEÑOS --------------- */
+/* PRESENTACIÓN DISEÑOS */
 
 #present-design {
 	width: 100%;
@@ -586,7 +560,6 @@ footer {
 	flex-direction: column;
 	justify-content: center;
 	gap: var(--miMarginDiv);
-	animation: text-blur-out 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) reverse both;
 }
 
 #present-design .line {
@@ -603,7 +576,7 @@ footer {
 	width: 70%;
 }
 
-/* --------------- GALERÍA --------------- */
+/* GALERÍA */
 
 #gallery {
 	padding: var(--miPaddingSection);
@@ -618,7 +591,7 @@ footer {
 }
 
 #gallery .line {
-	margin: 10vh 0;
+	margin: 60px 0;
 }
 
 .gallery-section {
@@ -643,7 +616,7 @@ footer {
 }
 
 .gallery-item:hover {
-	transition: all 500ms;
+	transition: all 600ms;
 	filter: grayscale(0);
 }
 
@@ -653,23 +626,23 @@ footer {
 	object-fit: cover;
 }
 
-/* --------------- IMAGEN ABIERTA --------------- */
+/* GALERÍA > IMAGEN ABIERTA */
 
-/* --------------- FONDO --------------- */
+/* GALERÍA > IMAGEN ABIERTA > FONDO */
 
 .lightbox {
 	position: fixed;
 	display: none;
-	background: rgba(0, 0, 0, 0.95);
+	background-color: rgba(0, 0, 0, 0.95);
 	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
-	/* z-index para que quede encima del header */
+	/* para que quede por encima del header */
 	z-index: 10;
 }
 
-/* --------------- CAJA IMAGEN ABIERTA --------------- */
+/* GALERÍA > IMAGEN ABIERTA > CONTAINER IMAGEN */
 
 .lightbox-content {
 	width: 70%;
@@ -687,7 +660,17 @@ footer {
 	object-fit: contain;
 }
 
-/* --------------- FLECHAS --------------- */
+/* GALERÍA > FLECHAS + EXIT */
+
+.lightbox-exit {
+	position: absolute;
+	font-size: 2em;
+	color: var(--secundario);
+	padding: 10px;
+	top: 30px;
+	right: -50px;
+	cursor: pointer;
+}
 
 .lightbox-prev,
 .lightbox-next {
@@ -695,7 +678,6 @@ footer {
 	font-size: 2em;
 	color: var(--secundario);
 	padding: 10px;
-	top: 45%;
 	cursor: pointer;
 }
 
@@ -707,34 +689,70 @@ footer {
 	right: -50px;
 }
 
-/* --------------- RESPONSIVE --------------- */
+/* RESPONSIVE */
 
 @media (max-width: 1200px) {
+	
+	/* HOME */
 
-	:root {
-		--miPaddingL: 0 15vh;
-		--miPaddingSection: 15vh;
+	h1 {
+		font-size: 4em;
 	}
 
-	/* --------------- HEADER --------------- */
+	p {
+		font-size: 0.8em;
+	}
+
+	/* TRABAJOS */
+
+	.work-container a {
+		width: 45%;
+	}
+
+	/* GALERÍA */
+
+	#gallery h3 {
+		font-size: 0.8em;
+	}
+
+	/* CONTACTO */
+
+	.form-container {
+		gap: 60px;
+	}
+}
+
+@media (max-width: 900px) {
+
+	/* VARIABLES */
+
+	:root {
+		--secundario: #f6f6f6;
+		--primario: #191919;
+		--miPaddingL: 0 80px;
+		--miPaddingSection: 100px 80px;
+		--miMarginDiv: 60px;
+	}
+
+	/* HEADER */
 
 	.nav-menu {
 		width: 100%;
 		height: 100%;
 		flex-direction: column;
+		gap: 35px;
 		position: fixed;
 		left: 0;
 		top: 0;
-		padding-left: var(--miPaddingSection);
+		padding: var(--miPaddingL);
 		background-color: var(--primario);
-		/* overflow-y: auto; */
 		opacity: 0;
 		pointer-events: none;
-		/* transition: opacity 500ms; */
+		transition: all 500ms;
 	}
 
 	.nav-menu li {
-		font-size: 1.5em;
+		font-size: 1em;
 	}
 
 	.open-menu,
@@ -747,7 +765,7 @@ footer {
 
 	.close-menu {
 		align-self: flex-start;
-		padding: 35px 0 0 0;
+		margin: 25px 0 0 0;
 	}
 
 	.menu_opened {
@@ -760,104 +778,232 @@ footer {
 		outline: none;
 	}
 
-	/* --------------- FOOTER --------------- */
+	/* FOOTER */
 
 	footer {
 		flex-direction: column;
 		gap: 70px;
-		padding: 15vh 15vh 10vh;
+		padding: 100px 80px 40px;
 	}
 
-	.timeline {
-		width: 90%;
+	.footer_title {
+		margin-bottom: 0;
 	}
 
-	.work-container a {
-		width: 45%;
-		font-size: 1.5em;
+	.footer-data {
+		text-align: center;
 	}
 
-	.gallery-item {
-		width: 45%;
-		
-	}
-}
-
-@media (max-width: 768px) {
-
-	:root {
-		--miPaddingL: 0 5vh;
-		--miPaddingSection: 5vh;
+	.footer-redes {
+		justify-content: center;
+		gap: 15px;
 	}
 
-	/* --------------- LANDING --------------- */
-
-	h1 {
-		font-size: 2em;
+	.footer-redes a {
+		font-size: 20px;
 	}
 
-	#landing p {
-		font-size: 0.7em;
-	}
-	
-	/* --------------- SOBRE MÍ --------------- */
+	/* HOME */
 
 	h2 {
-		font-size: 1.5em;
-	}
-	
-	#about .about-data {
-		width: 100%;
-		font-size: 0.7em;
-	}
-
-	/* --------------- TRABAJOS --------------- */
-
-	.work-container a {
-		width: 100%;
 		font-size: 2em;
 	}
 
-	/* --------------- FORMULARIO --------------- */
+	p {
+		font-size: 0.8em;
+	}
+
+	/* CONTACTO */
 
 	.form-container {
 		width: 100%;
 		flex-direction: column;
-		gap: 10vh;
+		gap: var(--miMarginDiv);
 	}
 
 	.form {
 		width: 100%;
 	}
 
-	.contacto-other {
+	#contacto form {
 		width: 100%;
 		flex-direction: column;
 	}
 
-	/* --------------- WORKS --------------- */
-
-	#present-design p{
-		width: 100%;
-		text-align: justify;
-		font-size: 0.7em;
+	#contacto form input {
+		padding: 10px;
 	}
 
-	/* --------------- GALERÍA --------------- */
+	#contacto form textarea {
+		padding: 10px;
+	}
+
+	.contacto-other {
+		width: 100%;
+		text-align: center;
+	}
+
+	.contacto-other ul {
+		justify-content: center;
+		gap: 15px
+	}
+
+	.contacto-other ul li a {
+		font-size: 20px;
+	}
+
+	/* PAGES */
+
+	/* GALERÍA */
+
+	.gallery-item {
+		width: 45%;
+		height: 250px;
+		filter: grayscale(1);
+		cursor: pointer;
+	}
+
+}
+
+@media (max-width: 600px) {
+
+	/* VARIABLES */
+
+	:root {
+		--secundario: #f6f6f6;
+		--primario: #191919;
+		--miPaddingL: 0 50px;
+		--miPaddingSection: 100px 50px;
+		--miMarginDiv: 40px;
+	}
+
+	/* BOTÓN SUBIR */
+
+	.btn-up {
+		width: 30px;
+		height: 30px;
+	}
+
+	.btn-up a {
+		font-size: 15px;
+	}
+
+	/* HOME */
+
+	h1 {
+		font-size: 2.5em;
+	}
+
+	h2 {
+		font-size: 1.5em;
+	}
+
+	/* SOBRE MÍ */
+
+	#about .about-data {
+		width: 100%;
+	}
+
+	/* FORMACIÓN > LÍNEA */
+
+	.timeline {
+		display: none;
+	}
+
+	.timeline_2 {
+		display: flex;
+		margin-top: var(--miMarginDiv);
+	}
+
+	.timeline_2 ul {
+		display: flex;
+		flex-direction: column;
+		gap: 60px;
+	}
+
+	.timeline_2 h4 {
+		font-size: 0.6em;
+		letter-spacing: 3px;
+		margin-bottom: 30px;
+		text-align: center;
+	}
+
+	.timeline_2 p {
+		padding: 30px;
+		background-color: var(--primario);
+		border-radius: 10px;
+		color: var(--secundario);
+	}
+
+	/* TRABAJOS */
+
+	.work-container a {
+		width: 100%;
+		font-size: 1.5em;
+	}
+
+	/* PAGES */
+
+	/* PRESENTACIÓN DISEÑOS */
+
+	#present-design p {
+		width: 100%;
+	}
+
+	/* GALERÍA */
+
+	.gallery-container {
+		width: 100%;
+	}
 
 	.gallery-item {
 		width: 100%;
 	}
 
+	/* GALERÍA > IMAGEN ABIERTA */
+
+	/* GALERÍA > IMAGEN ABIERTA > CONTAINER IMAGEN */
+
 	.lightbox-content {
-		width: 85%;
+		width: 90%;
+		padding: 0px;
+	}
+
+	.lightbox-content img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
+	/* GALERÍA > FLECHAS + EXIT */
+
+	.lightbox-exit {
+		font-size: 30px;
+		top: 10px;
+		right: 0;
+	}
+
+	.lightbox-prev,
+	.lightbox-next {
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		display: flex !important;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		font-size: 15px;
+		color: var(--secundario);
+		background-color: var(--primario);
+		cursor: pointer;
+		opacity: 0.75;
 	}
 
 	.lightbox-prev {
-		left: -30px;
+		left: 10px;
 	}
-	
+
 	.lightbox-next {
-		right: -30px;
-	}	
+		right: 10px;
+	}
 }

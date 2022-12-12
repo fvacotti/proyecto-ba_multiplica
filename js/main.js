@@ -1,4 +1,6 @@
-// --------------- MENÚ HAMBURGUESA ---------------
+// --------------- SELECTOR SECCIONES Y MENÚ HAMBURGUESA --------------- //
+
+// seteo menú hamburguesa
 
 const menu = document.querySelector(".nav-menu");
 const openMenuBtn = document.querySelector(".open-menu");
@@ -13,6 +15,8 @@ closeMenuBtn.addEventListener("click", toggleMenu);
 
 const menuLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
 
+// selector de secciones
+
 const observer = new IntersectionObserver((entries) => {
 		entries.forEach((entry) => {
 			const id = entry.target.getAttribute("id");
@@ -25,10 +29,12 @@ const observer = new IntersectionObserver((entries) => {
 		});
 	},
 
-	// para que no se intersecten elementos que estén muy juntos
+	// para que no se choquen elementos que estén muy juntos
 	
 	{ rootMargin: "-30% 0px -70% 0px" }
 );
+
+// hamburguesa
 
 menuLinks.forEach((menuLink) => {
 	menuLink.addEventListener("click", function () {
