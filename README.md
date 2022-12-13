@@ -1,0 +1,3 @@
+Decidí realizar este trabajo para darle un uso profesional y personal a los conocimientos adquiridos durante el curso "BA Multiplica 2.0".
+
+Puesto que estoy en proceso de convertirme en diseñador gráfico, el objetivo de este trabajo fue realizar mi propio currículum vitae (CV) + portfolio de trabajos a fin de poder presentar de manera simple y efectiva mis trabajos realizados a la hora de posibles ofertas laborales que se presenten en mi carrera.

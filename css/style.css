@@ -50,7 +50,6 @@
 }
 
 @keyframes blink-1 {
-
 	0%,
 	50%,
 	100% {
@@ -870,18 +869,19 @@ footer {
 	/* VARIABLES */
 
 	:root {
-		--secundario: #f6f6f6;
-		--primario: #191919;
 		--miPaddingL: 0 50px;
-		--miPaddingSection: 100px 50px;
+		--miPaddingSection: 70px 50px;
 		--miMarginDiv: 40px;
+	}
+
+	footer {
+		padding: 70px 50px 40px;
 	}
 
 	/* BOTÓN SUBIR */
 
 	.btn-up {
-		width: 30px;
-		height: 30px;
+		border: 1px solid var(--secundario);
 	}
 
 	.btn-up a {
@@ -959,8 +959,6 @@ footer {
 	.gallery-item {
 		width: 100%;
 	}
-
-	/* GALERÍA > IMAGEN ABIERTA */
 
 	/* GALERÍA > IMAGEN ABIERTA > CONTAINER IMAGEN */
 

@@ -1,11 +1,11 @@
 // --------------- SELECTOR SECCIONES Y MENÚ HAMBURGUESA --------------- //
 
 // seteo menú hamburguesa
-
 const menu = document.querySelector(".nav-menu");
 const openMenuBtn = document.querySelector(".open-menu");
 const closeMenuBtn = document.querySelector(".close-menu");
 
+// aparezco/desaparezco menú
 function toggleMenu() {
 	menu.classList.toggle("menu_opened");
 }
@@ -13,6 +13,7 @@ function toggleMenu() {
 openMenuBtn.addEventListener("click", toggleMenu);
 closeMenuBtn.addEventListener("click", toggleMenu);
 
+// agarro los links que tengan "#" en ".nav-menu" (^= es "que comience con...")
 const menuLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
 
 // selector de secciones
@@ -29,8 +30,7 @@ const observer = new IntersectionObserver((entries) => {
 		});
 	},
 
-	// para que no se choquen elementos que estén muy juntos
-	
+	// para que no se choquen elementos que estén muy juntos	
 	{ rootMargin: "-30% 0px -70% 0px" }
 );
 
@@ -48,7 +48,7 @@ menuLinks.forEach((menuLink) => {
 	}
 });
 
-// --------------- BOTÓN ARRIBA ---------------
+// --------------- BOTÓN ARRIBA --------------- //
 
 function subir() {
 	window.addEventListener("scroll", () => {

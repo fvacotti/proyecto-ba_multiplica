@@ -1,35 +1,30 @@
 // --------------- GALERÍA --------------- //
 
+// tomo el div de las imagenes
 const galleryItem = document.getElementsByClassName("gallery-item");
 
 // creo elemento para el lightbox
-
 const lightBoxContainer = document.createElement("div");
 
 // creo área del lightbox
-
 const lightBoxContent = document.createElement("div");
 
 // creo imagen del lightbox
-
 const lightBoxImg = document.createElement("img");
 
 // creo botones prev, next y exit
-
 const lightBoxPrev = document.createElement("div");
 const lightBoxNext = document.createElement("div");
 const lightBoxExit = document.createElement("div");
 
 // agrego las clases a los elementos creados
-
 lightBoxContainer.classList.add("lightbox");
 lightBoxContent.classList.add("lightbox-content");
 lightBoxPrev.classList.add("fa-solid", "fa-angle-left", "lightbox-prev");
 lightBoxNext.classList.add("fa-solid", "fa-angle-right", "lightbox-next");
 lightBoxExit.classList.add("fa-solid", "fa-xmark", "lightbox-exit");
 
-// agrego en el html
-
+// agrego "hijos" a los elementos creados
 lightBoxContainer.appendChild(lightBoxContent);
 lightBoxContent.appendChild(lightBoxImg);
 lightBoxContent.appendChild(lightBoxPrev);
