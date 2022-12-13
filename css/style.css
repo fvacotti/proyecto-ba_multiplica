@@ -50,6 +50,7 @@
 }
 
 @keyframes blink-1 {
+
 	0%,
 	50%,
 	100% {
@@ -650,7 +651,7 @@ footer {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 20px;
+	padding: 30px;
 }
 
 .lightbox-content img {
@@ -667,7 +668,7 @@ footer {
 	color: var(--secundario);
 	padding: 10px;
 	top: 30px;
-	right: -50px;
+	right: 10px;
 	cursor: pointer;
 }
 
@@ -681,17 +682,17 @@ footer {
 }
 
 .lightbox-prev {
-	left: -50px;
+	left: 10px;
 }
 
 .lightbox-next {
-	right: -50px;
+	right: 10px;
 }
 
 /* RESPONSIVE */
 
 @media (max-width: 1200px) {
-	
+
 	/* HOME */
 
 	h1 {
@@ -862,6 +863,34 @@ footer {
 		cursor: pointer;
 	}
 
+	/* GALERÍA > FLECHAS + EXIT */
+
+	.lightbox-exit {
+		position: absolute;
+		font-size: 2em;
+		color: var(--secundario);
+		padding: 10px;
+		top: 30px;
+		right: -20px;
+		cursor: pointer;
+	}
+
+	.lightbox-prev,
+	.lightbox-next {
+		position: absolute;
+		font-size: 2em;
+		color: var(--secundario);
+		padding: 10px;
+		cursor: pointer;
+	}
+
+	.lightbox-prev {
+		left: -20px;
+	}
+
+	.lightbox-next {
+		right: -20px;
+	}
 }
 
 @media (max-width: 600px) {
@@ -964,7 +993,7 @@ footer {
 
 	.lightbox-content {
 		width: 90%;
-		padding: 0px;
+		padding: 10px 0;
 	}
 
 	.lightbox-content img {
@@ -977,8 +1006,20 @@ footer {
 
 	.lightbox-exit {
 		font-size: 30px;
-		top: 10px;
-		right: 0;
+		top: 10%;
+		right: 10px;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		display: flex !important;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		font-size: 15px;
+		color: var(--secundario);
+		background-color: var(--primario);
+		cursor: pointer;
+		opacity: 0.75;
 	}
 
 	.lightbox-prev,
