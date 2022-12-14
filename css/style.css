@@ -927,6 +927,10 @@ footer {
 		font-size: 1.5em;
 	}
 
+	p {
+		font-size: 0.7em;
+	}
+
 	/* SOBRE MÍ */
 
 	#about .about-data {
@@ -980,6 +984,10 @@ footer {
 	}
 
 	/* GALERÍA */
+
+	#gallery h3 {
+		font-size: 0.7em;
+	}
 
 	.gallery-container {
 		width: 100%;
